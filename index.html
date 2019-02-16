@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>HIDIVE - Stream DUBCAST℠, Exclusive Anime & More!</title>
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
   <link href="styles/styles.css" rel="stylesheet" type="text/css">
   <link rel="icon" href="images/favicon.ico">
   <script type="text/javascript" src="script.js"></script>
@@ -123,7 +123,7 @@
                 request.send();
                 request.onload = function() {
                     var AllJSON = request.response;
-                    var JSOnText = JSON.parse(FullText);
+                    var JSOnText = JSON.parse(AllJSON);
                     showData(JSOnText);
                 }
                 function showData(jsonObj) {
