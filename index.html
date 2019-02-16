@@ -129,9 +129,20 @@
                 function showData(jsonObj) {
                     var TitleRows = jsonObj['Data']['TitleRows'];
 
+                    var headerTitle = document.createElement("article");
+
                     for(var i = 0; i < TitleRows.length; i++) {
-                        document.getElementById("demo").innerHTML = TitleRows[i].Name;
+
+                        var aH2 = document.createElement('h2');
+                        aH2.textContent = TitleRows[i].Name;
+
+                        headerTitle.appendChild(aH2);
+
+                        // document.getElementById("demo").innerHTML = TitleRows[i].Name;
                     }
+
+                    var element = document.getElementById("demo");
+                    element.appendChild(headerTitle);
 
                     // var heroes = jsonObj['Data']['TitleRows'][0]['Titles'];
                     // for(var i = 0; i < heroes.length; i++) {
