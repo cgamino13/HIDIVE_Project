@@ -113,6 +113,7 @@
                     <span class="dot" onclick="currentSlide(3)"></span> 
                 </div>
             </div>
+            <!-- Start of the lists -->
             <p id="demo"></p>
             <script>
                 var header = document.querySelector('header');
@@ -128,39 +129,23 @@
                 }
                 function showData(jsonObj) {
                     var TitleRows = jsonObj['Data']['TitleRows'];
-
                     var headerTitle = document.createElement("article");
 
                     for(var i = 0; i < TitleRows.length; i++) {
-
                         var aH2 = document.createElement('h2');
                         aH2.textContent = TitleRows[i].Name;
-
                         headerTitle.appendChild(aH2);
 
-                        // document.getElementById("demo").innerHTML = TitleRows[i].Name;
+                        // For each title need to output the list of Series
+                        var Series = TitleRows[i]["Titles"];
+                        for(var k = 0; k < Series.length; k++) {
+                            var img = new Image(1,1); // width, height values are optional params 
+                            img.src = Series[k]["KeyArtUrl"];
+                            headerTitle.appendChild(img);
+                        }
                     }
-
                     var element = document.getElementById("demo");
                     element.appendChild(headerTitle);
-
-                    // var heroes = jsonObj['Data']['TitleRows'][0]['Titles'];
-                    // for(var i = 0; i < heroes.length; i++) {
-                    //     var myArticle = document.createElement('article');
-                    //     var myH2 = document.createElement('h2');
-
-                    //     var superPowers = heroes[i].powers;
-                    //     for (var j = 0; j < superPowers.length; j++) {
-                    //         var listItem = document.createElement('li');
-                    //         listItem.textContent = superPowers[j];
-                    //         myList.appendChild(listItem);
-                    //     }
-                        
-                    //     // document.write(heroes[i].Name);
-                    //     myH2.textContent = heroes[i].Name;
-                    //     myArticle.appendChild(myH2);
-                    //     document.getElementById("demo").innerHTML = heroes[i].Name;
-                    // }
                 }
             </script>
             <!-- List -->
@@ -198,34 +183,23 @@
                                         <div class="text-container" style="opacity: 1; margin-left: 0px;">
                                             <h1 data-tour-point="1"><a href="/tv/bermuda-triangle-colorful-pastorale">Bermuda Triangle ~ Colorful Pastorale</a></h1>
                                             <h2>Season 1</h2>
-                            
-                                            <div class="RatingStars">
-                                                
+                                            <div class="RatingStars">    
                             <span class="stars title-908" data-json="{&quot;titleID&quot;: 908, &quot;overall&quot;: 4.26, &quot;isUser&quot;: false, &quot;userRating&quot;: 0, &quot;hash&quot;: &quot;a715fff776820601e59cb37d947d1c264cd922b2&quot;}">
                                 <span class="star-rating" data-title="908" style="vertical-align:middle;display:inline-block;"></span>
                                     <span style="font-size:12px;vertical-align:middle;"> (Rating requires login) - <a href="/account/login">Log In</a> | <a href="/signup">Sign Up</a></span>
                             </span>
                                             </div>
-                            
                                             <div class="top-gutter-10" data-tour-point="2">
-                                                
-                            
-                            
                                 <button type="button" class="btn btn-xs btn-primary" onclick="subscribeNow();">
                                 <span class="fa fa-forward" style="line-height:1em;"></span>
                                     <span class="btn-text hidden-xs"> Add To Queue</span>
                                     <span class="btn-text visible-xs"> (+)</span>
                                 </button>
-                            
-                                                
-                            
-                            
                                 <button type="button" class="btn btn-xs btn-primary" onclick="subscribeNow();">
                                 <span class="fa fa-heart" style=""></span>
                                 <span class="btn-text hidden-xs"> Add Favorite</span>
                                 <span class="btn-text visible-xs"> (+)</span>
                                 </button>
-                            
                                             </div>
                                             <p class="hidden-xs">Daily life for mermaids come with everyday issues. Follow the adventures of five young mermaids as they explore their town and the world around them in this delightful slice-of-life series that takes viewers to an enchanting world beneath the waves.</p>
                                             <ul class="list-unstyled details" style="font-size:12px;">
@@ -276,331 +250,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="episodes">
-                                <h1><a href="/tv/bermuda-triangle-colorful-pastorale">Bermuda Triangle ~ Colorful Pastorale</a></h1>
-                                <h2 data-tour-point="0">Season 1 | 12 Episodes</h2>
-                            
-                                    <div class="window-slider slick-wrapper">
-                                        <div class="episode-slider animated fadeIn">
-                            
-                                                <div class="cell" data-section="episodes" data-id="9160" id="episodes-9160">
-                                                    <div style="position:relative;">
-                                                        <div class="hitbox " id="ekeys01e001">
-                                                                                                                                                                    <div class="player">
-                                                                        <a href="https://www.hidive.com/stream/bermuda-triangle-colorful-pastorale/s01e001" style="font-size:3.5em;line-height:1em;" data-play="true" data-title="Bermuda Triangle ~ Colorful Pastorale" data-promo="" data-creative="episode_slider" class="glyphicon glyphicon-play-circle "></a>
-                                                                    </div>
-                            
-                                                        </div>
-                                                        <div class="default-img">
-                                                                <img src="//d10xkldqejj5hr.cloudfront.net/titles/BRT/256x144/bermuda-triangle-colorful-pastrale_BRT_001_001_256x144_01.jpg" class="img-responsive" onerror="ResizeImage('//d10xkldqejj5hr.cloudfront.net/titles/BRT/512x288/bermuda-triangle-colorful-pastrale_BRT_001_001_512x288_01.jpg','512x288', '256x144', 'screenshot', this)">
-                                                        </div>
-                                                    </div>
-                                                    <div class="synopsis">
-                                                        <h3 title="Welcome to Parrel" data-toggle="tooltip">E1 | Welcome to Parrel</h3>
-                                                        <p style="">Life in Parrel isn't always eating cake and making friends, there is much to learn and explore, but what happens when the girls discover a hidden treasure?</p>
-                                                    </div>
-                                                </div>
-                                                <div class="cell" data-section="episodes" data-id="9161" id="episodes-9161">
-                                                    <div style="position:relative;">
-                                                        <div class="hitbox " id="ekeys01e002">
-                                                                                                                                                                    <div class="player">
-                                                                        <a href="https://www.hidive.com/stream/bermuda-triangle-colorful-pastorale/s01e002" style="font-size:3.5em;line-height:1em;" data-play="true" data-title="Bermuda Triangle ~ Colorful Pastorale" data-promo="" data-creative="episode_slider" class="glyphicon glyphicon-play-circle "></a>
-                                                                    </div>
-                            
-                                                        </div>
-                                                        <div class="default-img">
-                                                                <img src="//d10xkldqejj5hr.cloudfront.net/titles/BRT/256x144/bermuda-triangle-colorful-pastrale_BRT_001_002_256x144_01.jpg" class="img-responsive" onerror="ResizeImage('//d10xkldqejj5hr.cloudfront.net/titles/BRT/512x288/bermuda-triangle-colorful-pastrale_BRT_001_002_512x288_01.jpg','512x288', '256x144', 'screenshot', this)">
-                                                        </div>
-                                                    </div>
-                                                    <div class="synopsis">
-                                                        <h3 title="So Many Cineorbs" data-toggle="tooltip">E2 | So Many Cineorbs</h3>
-                                                        <p style="">Despite Ardi’s warning not to return to the theater, Sonata cannot just forget what they found there. When she later turns up missing, Caro has a good idea where she went.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="cell" data-section="episodes" data-id="9162" id="episodes-9162">
-                                                    <div style="position:relative;">
-                                                        <div class="hitbox " id="ekeys01e003">
-                                                                                                                                                                    <div class="player">
-                                                                        <a href="https://www.hidive.com/stream/bermuda-triangle-colorful-pastorale/s01e003" style="font-size:3.5em;line-height:1em;" data-play="true" data-title="Bermuda Triangle ~ Colorful Pastorale" data-promo="" data-creative="episode_slider" class="glyphicon glyphicon-play-circle "></a>
-                                                                    </div>
-                            
-                                                        </div>
-                                                        <div class="default-img">
-                                                                <img src="//d10xkldqejj5hr.cloudfront.net/titles/BRT/256x144/bermuda-triangle-colorful-pastrale_BRT_01_003_256x144_00.jpg" class="img-responsive" onerror="ResizeImage('//d10xkldqejj5hr.cloudfront.net/titles/BRT/512x288/bermuda-triangle-colorful-pastrale_BRT_01_003_512x288_00.jpg','512x288', '256x144', 'screenshot', this)">
-                                                        </div>
-                                                    </div>
-                                                    <div class="synopsis">
-                                                        <h3 title="Five of Us, Together" data-toggle="tooltip">E3 | Five of Us, Together</h3>
-                                                        <p style="">The girls start renovations to the theater, but it’s missing a certain something. What can they do to make it a little more cozy?</p>
-                                                    </div>
-                                                </div>
-                                                <div class="cell" data-section="episodes" data-id="9163" id="episodes-9163">
-                                                    <div style="position:relative;">
-                                                        <div class="hitbox " id="ekeys01e004">
-                                                                                                                                                                    <div class="player">
-                                                                        <a href="https://www.hidive.com/stream/bermuda-triangle-colorful-pastorale/s01e004" style="font-size:3.5em;line-height:1em;" data-play="true" data-title="Bermuda Triangle ~ Colorful Pastorale" data-promo="" data-creative="episode_slider" class="glyphicon glyphicon-play-circle "></a>
-                                                                    </div>
-                            
-                                                        </div>
-                                                        <div class="default-img">
-                                                                <img src="//d10xkldqejj5hr.cloudfront.net/titles/BRT/256x144/bermuda-triangle-colorful-pastrale_BRT_01_004_256x144_00.jpg" class="img-responsive" onerror="ResizeImage('//d10xkldqejj5hr.cloudfront.net/titles/BRT/512x288/bermuda-triangle-colorful-pastrale_BRT_01_004_512x288_00.jpg','512x288', '256x144', 'screenshot', this)">
-                                                        </div>
-                                                    </div>
-                                                    <div class="synopsis">
-                                                        <h3 title="Boldly, with Everything You've Got" data-toggle="tooltip">E4 | Boldly, with Everything You've Got</h3>
-                                                        <p style="">Serena doesn’t understand; The projector should be working, but it’s not. Something’s being overlooked. What could it be?</p>
-                                                    </div>
-                                                </div>
-                                                <div class="cell" data-section="episodes" data-id="9164" id="episodes-9164">
-                                                    <div style="position:relative;">
-                                                        <div class="hitbox " id="ekeys01e005">
-                                                                                                                                                                    <div class="player">
-                                                                        <a href="https://www.hidive.com/stream/bermuda-triangle-colorful-pastorale/s01e005" style="font-size:3.5em;line-height:1em;" data-play="true" data-title="Bermuda Triangle ~ Colorful Pastorale" data-promo="" data-creative="episode_slider" class="glyphicon glyphicon-play-circle "></a>
-                                                                    </div>
-                            
-                                                        </div>
-                                                        <div class="default-img">
-                                                                <img src="//d10xkldqejj5hr.cloudfront.net/titles/BRT/256x144/bermuda-triangle-colorful-pastorale-BRT_01_005_256x144_00.jpg" class="img-responsive" onerror="ResizeImage('//d10xkldqejj5hr.cloudfront.net/titles/BRT/512x288/bermuda-triangle-colorful-pastorale-BRT_01_005_512x288_00.jpg','512x288', '256x144', 'screenshot', this)">
-                                                        </div>
-                                                    </div>
-                                                    <div class="synopsis">
-                                                        <h3 title="Surprise and Excitement" data-toggle="tooltip">E5 | Surprise and Excitement</h3>
-                                                        <p style="">Success – the movie theater is now up and operational, but this is only the beginning. Now its time to host a screening!</p>
-                                                    </div>
-                                                </div>
-                                                <div class="cell" data-section="episodes" data-id="9165" id="episodes-9165">
-                                                    <div style="position:relative;">
-                                                        <div class="hitbox " id="ekeys01e006">
-                                                                                                                                <div class="na audio-ja subtitle-en">
-                                                                    English Simulcast <br>
-                                                                    Sat, Feb 16, ’19 8:00 AM
-                                                                </div>
-                                                            
-                                                        </div>
-                                                        <div class="default-img">
-                                                                <img src="//d10xkldqejj5hr.cloudfront.net/titles/BRT/256x144/bermuda-triangle-colorful-pastorale-BRT_01_006_256x144_00.jpg" class="img-responsive" onerror="ResizeImage('//d10xkldqejj5hr.cloudfront.net/titles/BRT/512x288/bermuda-triangle-colorful-pastorale-BRT_01_006_512x288_00.jpg','512x288', '256x144', 'screenshot', this)">
-                                                        </div>
-                                                    </div>
-                                                    <div class="synopsis">
-                                                        <h3 title="Tell Me Your Name" data-toggle="tooltip">E6 | Tell Me Your Name</h3>
-                                                        <p style="">Fina finds an unusual Cineorb inside the movie theater. Will the strange tide rolling over Parrel unlock its secrets?</p>
-                                                    </div>
-                                                </div>
-                                                <div class="cell" data-section="episodes" data-id="9166" id="episodes-9166">
-                                                    <div style="position:relative;">
-                                                        <div class="hitbox " id="ekeys01e007">
-                                                                                                                                <div class="na audio-ja subtitle-en">
-                                                                    English Simulcast <br>
-                                                                    Sat, Feb 23, ’19 8:00 AM
-                                                                </div>
-                                                            
-                                                        </div>
-                                                        <div class="default-img">
-                                                                <img src="//d10xkldqejj5hr.cloudfront.net/misc/HIDIVE_ComingSoon_256x144.jpg" class="img-responsive" onerror="ResizeImage('//d10xkldqejj5hr.cloudfront.net/misc/HIDIVE_ComingSoon_512x288.jpg','512x288', '256x144', 'screenshot', this)">
-                                                        </div>
-                                                    </div>
-                                                    <div class="synopsis">
-                                                        <h3 title="Coming Soon" data-toggle="tooltip">E7 | Coming Soon</h3>
-                                                        <p style="">This episode is not available yet. Please check our schedule for details.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="cell" data-section="episodes" data-id="9167" id="episodes-9167">
-                                                    <div style="position:relative;">
-                                                        <div class="hitbox " id="ekeys01e008">
-                                                                                                                                <div class="na audio-ja subtitle-en">
-                                                                    English Simulcast <br>
-                                                                    Sat, Mar 2, ’19 8:00 AM
-                                                                </div>
-                                                            
-                                                        </div>
-                                                        <div class="default-img">
-                                                                <img src="//d10xkldqejj5hr.cloudfront.net/misc/HIDIVE_ComingSoon_256x144.jpg" class="img-responsive" onerror="ResizeImage('//d10xkldqejj5hr.cloudfront.net/misc/HIDIVE_ComingSoon_512x288.jpg','512x288', '256x144', 'screenshot', this)">
-                                                        </div>
-                                                    </div>
-                                                    <div class="synopsis">
-                                                        <h3 title="Coming Soon" data-toggle="tooltip">E8 | Coming Soon</h3>
-                                                        <p style="">This episode is not available yet. Please check our schedule for details.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="cell" data-section="episodes" data-id="9168" id="episodes-9168">
-                                                    <div style="position:relative;">
-                                                        <div class="hitbox " id="ekeys01e009">
-                                                                                                                                <div class="na audio-ja subtitle-en">
-                                                                    English Simulcast <br>
-                                                                    Sat, Mar 9, ’19 8:00 AM
-                                                                </div>
-                                                            
-                                                        </div>
-                                                        <div class="default-img">
-                                                                <img src="//d10xkldqejj5hr.cloudfront.net/misc/HIDIVE_ComingSoon_256x144.jpg" class="img-responsive" onerror="ResizeImage('//d10xkldqejj5hr.cloudfront.net/misc/HIDIVE_ComingSoon_512x288.jpg','512x288', '256x144', 'screenshot', this)">
-                                                        </div>
-                                                    </div>
-                                                    <div class="synopsis">
-                                                        <h3 title="Coming Soon" data-toggle="tooltip">E9 | Coming Soon</h3>
-                                                        <p style="">This episode is not available yet. Please check our schedule for details.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="cell" data-section="episodes" data-id="9169" id="episodes-9169">
-                                                    <div style="position:relative;">
-                                                        <div class="hitbox " id="ekeys01e010">
-                                                                                                                                <div class="na audio-ja subtitle-en">
-                                                                    English Simulcast <br>
-                                                                    Sat, Mar 16, ’19 8:00 AM
-                                                                </div>
-                                                            
-                                                        </div>
-                                                        <div class="default-img">
-                                                                <img src="//d10xkldqejj5hr.cloudfront.net/misc/HIDIVE_ComingSoon_256x144.jpg" class="img-responsive" onerror="ResizeImage('//d10xkldqejj5hr.cloudfront.net/misc/HIDIVE_ComingSoon_512x288.jpg','512x288', '256x144', 'screenshot', this)">
-                                                        </div>
-                                                    </div>
-                                                    <div class="synopsis">
-                                                        <h3 title="Coming Soon" data-toggle="tooltip">E10 | Coming Soon</h3>
-                                                        <p style="">This episode is not available yet. Please check our schedule for details.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="cell" data-section="episodes" data-id="9170" id="episodes-9170">
-                                                    <div style="position:relative;">
-                                                        <div class="hitbox " id="ekeys01e011">
-                                                                                                                                <div class="na audio-ja subtitle-en">
-                                                                    English Simulcast <br>
-                                                                    Sat, Mar 23, ’19 8:00 AM
-                                                                </div>
-                                                            
-                                                        </div>
-                                                        <div class="default-img">
-                                                                <img src="//d10xkldqejj5hr.cloudfront.net/misc/HIDIVE_ComingSoon_256x144.jpg" class="img-responsive" onerror="ResizeImage('//d10xkldqejj5hr.cloudfront.net/misc/HIDIVE_ComingSoon_512x288.jpg','512x288', '256x144', 'screenshot', this)">
-                                                        </div>
-                                                    </div>
-                                                    <div class="synopsis">
-                                                        <h3 title="Coming Soon" data-toggle="tooltip">E11 | Coming Soon</h3>
-                                                        <p style="">This episode is not available yet. Please check our schedule for details.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="cell" data-section="episodes" data-id="9171" id="episodes-9171">
-                                                    <div style="position:relative;">
-                                                        <div class="hitbox " id="ekeys01e012">
-                                                                                                                                <div class="na audio-ja subtitle-en">
-                                                                    English Simulcast <br>
-                                                                    Sat, Mar 30, ’19 8:00 AM
-                                                                </div>
-                                                            
-                                                        </div>
-                                                        <div class="default-img">
-                                                                <img src="//d10xkldqejj5hr.cloudfront.net/misc/HIDIVE_ComingSoon_256x144.jpg" class="img-responsive" onerror="ResizeImage('//d10xkldqejj5hr.cloudfront.net/misc/HIDIVE_ComingSoon_512x288.jpg','512x288', '256x144', 'screenshot', this)">
-                                                        </div>
-                                                    </div>
-                                                    <div class="synopsis">
-                                                        <h3 title="Coming Soon" data-toggle="tooltip">E12 | Coming Soon</h3>
-                                                        <p style="">This episode is not available yet. Please check our schedule for details.</p>
-                                                    </div>
-                                                </div>
-                                        </div>
-                                    </div>
-                            
-                            
-                            </div> -->
-                            <!-- <div class="recommended">
-                                <h1><a href="/tv/bermuda-triangle-colorful-pastorale">Bermuda Triangle ~ Colorful Pastorale</a></h1>
-                                <h2>You Might Like</h2>
-                                <div class="window-slider slick-wrapper">
-                                    <div class="recommended-slider">
-                                            <div class="cell" data-section="recommended" data-id="230" id="recommended-230">
-                                                <div style="position:relative">
-                                                    <div class="hitbox">
-                                                        <div class="player" style="font-size:3em;line-height:1em;"><a href="https://www.hidive.com/stream/this-boy-caught-a-merman/2012110901" class="glyphicon glyphicon-play-circle"></a></div>
-                                                    </div>
-                                                    <div class="img-rotator" data-num-of-episodes="1">
-                                                    <img src="//d10xkldqejj5hr.cloudfront.net/titles/TBM/256x144/TBM_01_00_256x144.jpg" class="img-responsive" style="display:none;" onerror="ResizeImage('//d10xkldqejj5hr.cloudfront.net/titles/TBM/512x288/TBM_01_00_512x288.jpg','512x288', '256x144', 'screenshot', this)">
-                                                    </div>
-                                                    <div class="default-img">
-                                                        <img src="//d10xkldqejj5hr.cloudfront.net/titles/TBM/TBM_MASTER_300x169.jpg" class="img-responsive lazy-load">
-                                                    </div>
-                                                </div>
-                                                <div class="synopsis">
-                                                    <h3 title="This Boy Caught a Merman" data-toggle="tooltip"><a href="/movies/this-boy-caught-a-merman">This Boy Caught a Merman</a></h3>
-                                                    <p>&nbsp;<i data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" class="show-info glyphicon glyphicon-modal-window" style="font-size:18px;" data-original-title="" title=""></i>&nbsp;&nbsp;<span>When lonely Shima is rescued by the merman Isaki their friendship soon turns into something much more.</span></p>
-                                                </div>
-                                            </div>
-                                            <div class="cell" data-section="recommended" data-id="861" id="recommended-861">
-                                                <div style="position:relative">
-                                                    <div class="hitbox">
-                                                        <div class="player" style="font-size:3em;line-height:1em;"><a href="https://www.hidive.com/stream/mr-tonegawa-middle-management-blues/s01e001" class="glyphicon glyphicon-play-circle"></a></div>
-                                                    </div>
-                                                    <div class="img-rotator" data-num-of-episodes="24">
-                                                    <img src="//d10xkldqejj5hr.cloudfront.net/titles/MTG/256x144/Tonegawa-MTG_01_001_256x144_00.jpg" class="img-responsive" style="display:none;" onerror="ResizeImage('//d10xkldqejj5hr.cloudfront.net/titles/MTG/512x288/Tonegawa-MTG_01_001_512x288_00.jpg','512x288', '256x144', 'screenshot', this)">
-                                                    <img src="//d10xkldqejj5hr.cloudfront.net/titles/MTG/256x144/Tonegawa-MTG_01_002_256x144_00.jpg" class="img-responsive" style="display:none;" onerror="ResizeImage('//d10xkldqejj5hr.cloudfront.net/titles/MTG/512x288/Tonegawa-MTG_01_002_512x288_00.jpg','512x288', '256x144', 'screenshot', this)">
-                                                    <img src="//d10xkldqejj5hr.cloudfront.net/titles/MTG/256x144/Tonegawa-MTG_01_003_256x144_00.jpg" class="img-responsive" style="display:none;" onerror="ResizeImage('//d10xkldqejj5hr.cloudfront.net/titles/MTG/512x288/Tonegawa-MTG_01_003_512x288_00.jpg','512x288', '256x144', 'screenshot', this)">
-                                                    </div>
-                                                    <div class="default-img">
-                                                        <img src="//d10xkldqejj5hr.cloudfront.net/titles/MTG/MTG_01_MASTER_300x169.jpg" class="img-responsive lazy-load">
-                                                    </div>
-                                                </div>
-                                                <div class="synopsis">
-                                                    <h3 title="Mr. Tonegawa: Middle Management Blues" data-toggle="tooltip"><a href="/tv/mr-tonegawa-middle-management-blues">Mr. Tonegawa: Middle Management Blues</a></h3>
-                                                    <p>&nbsp;<i data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" class="show-info glyphicon glyphicon-modal-window" style="font-size:18px;" data-original-title="" title=""></i>&nbsp;&nbsp;<span>Mr. Tonegawa is at the utter mercy of the cruel and unsympathetic CEO of his company and must fulfill his every demand.
-                        </span></p>
-                                                </div>
-                                            </div>
-                                            <div class="cell" data-section="recommended" data-id="886" id="recommended-886">
-                                                <div style="position:relative">
-                                                    <div class="hitbox">
-                                                        <div class="player" style="font-size:3em;line-height:1em;"><a href="https://www.hidive.com/stream/the-girl-in-twilight/s01e001" class="glyphicon glyphicon-play-circle"></a></div>
-                                                    </div>
-                                                    <div class="img-rotator" data-num-of-episodes="12">
-                                                    <img src="//d10xkldqejj5hr.cloudfront.net/titles/GIT/256x144/the-girl-in-twilight-GIT_01_001_256x144_00.jpg" class="img-responsive" style="display:none;" onerror="ResizeImage('//d10xkldqejj5hr.cloudfront.net/titles/GIT/512x288/the-girl-in-twilight-GIT_01_001_512x288_00.jpg','512x288', '256x144', 'screenshot', this)">
-                                                    <img src="//d10xkldqejj5hr.cloudfront.net/titles/GIT/256x144/the-girl-in-twilight-GIT_01_002_256x144_00.jpg" class="img-responsive" style="display:none;" onerror="ResizeImage('//d10xkldqejj5hr.cloudfront.net/titles/GIT/512x288/the-girl-in-twilight-GIT_01_002_512x288_00.jpg','512x288', '256x144', 'screenshot', this)">
-                                                    <img src="//d10xkldqejj5hr.cloudfront.net/titles/GIT/256x144/the-girl-in-twilight-GIT_01_003_256x144_00.jpg" class="img-responsive" style="display:none;" onerror="ResizeImage('//d10xkldqejj5hr.cloudfront.net/titles/GIT/512x288/the-girl-in-twilight-GIT_01_003_512x288_00.jpg','512x288', '256x144', 'screenshot', this)">
-                                                    </div>
-                                                    <div class="default-img">
-                                                        <img src="//d10xkldqejj5hr.cloudfront.net/titles/GIT/GIT_01_MASTER_300x169.jpg" class="img-responsive lazy-load">
-                                                    </div>
-                                                </div>
-                                                <div class="synopsis">
-                                                    <h3 title="The Girl in Twilight" data-toggle="tooltip"><a href="/tv/the-girl-in-twilight">The Girl in Twilight</a></h3>
-                                                    <p>&nbsp;<i data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" class="show-info glyphicon glyphicon-modal-window" style="font-size:18px;" data-original-title="" title=""></i>&nbsp;&nbsp;<span>High school student Asuka Tsuchimiya and her friends open the door to an alternative world after performing a ritual.</span></p>
-                                                </div>
-                                            </div>
-                                            <div class="cell" data-section="recommended" data-id="890" id="recommended-890">
-                                                <div style="position:relative">
-                                                    <div class="hitbox">
-                                                        <div class="player" style="font-size:3em;line-height:1em;"><a href="https://www.hidive.com/stream/gakuen-basara-samurai-high-school/s01e001" class="glyphicon glyphicon-play-circle"></a></div>
-                                                    </div>
-                                                    <div class="img-rotator" data-num-of-episodes="12">
-                                                    <img src="//d10xkldqejj5hr.cloudfront.net/titles/GBS/256x144/gakuen-basara-GBS_01_001_256x144_00.jpg" class="img-responsive" style="display:none;" onerror="ResizeImage('//d10xkldqejj5hr.cloudfront.net/titles/GBS/512x288/gakuen-basara-GBS_01_001_512x288_00.jpg','512x288', '256x144', 'screenshot', this)">
-                                                    <img src="//d10xkldqejj5hr.cloudfront.net/titles/GBS/256x144/gakuen-basara-GBS_01_002_256x144_00.jpg" class="img-responsive" style="display:none;" onerror="ResizeImage('//d10xkldqejj5hr.cloudfront.net/titles/GBS/512x288/gakuen-basara-GBS_01_002_512x288_00.jpg','512x288', '256x144', 'screenshot', this)">
-                                                    <img src="//d10xkldqejj5hr.cloudfront.net/titles/GBS/256x144/gakuen-basara-GBS_01_003_256x144_00.jpg" class="img-responsive" style="display:none;" onerror="ResizeImage('//d10xkldqejj5hr.cloudfront.net/titles/GBS/512x288/gakuen-basara-GBS_01_003_512x288_00.jpg','512x288', '256x144', 'screenshot', this)">
-                                                    </div>
-                                                    <div class="default-img">
-                                                        <img src="//d10xkldqejj5hr.cloudfront.net/titles/GBS/GBS_01_MASTER_300x169.jpg" class="img-responsive lazy-load">
-                                                    </div>
-                                                </div>
-                                                <div class="synopsis">
-                                                    <h3 title="Gakuen Basara: Samurai High School" data-toggle="tooltip"><a href="/tv/gakuen-basara-samurai-high-school">Gakuen Basara: Samurai High School</a></h3>
-                                                    <p>&nbsp;<i data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" class="show-info glyphicon glyphicon-modal-window" style="font-size:18px;" data-original-title="" title=""></i>&nbsp;&nbsp;<span>After the student council president is suspended, Date Masamune and Sanada Yukimura find themselves vying for the top spot.</span></p>
-                                                </div>
-                                            </div>
-                                            <div class="cell" data-section="recommended" data-id="136" id="recommended-136">
-                                                <div style="position:relative">
-                                                    <div class="hitbox">
-                                                        <div class="player" style="font-size:3em;line-height:1em;"><a href="https://www.hidive.com/stream/a-little-snow-fairy-sugar/s01e001" class="glyphicon glyphicon-play-circle"></a></div>
-                                                    </div>
-                                                    <div class="img-rotator" data-num-of-episodes="24">
-                                                    <img src="//d10xkldqejj5hr.cloudfront.net/titles/LSF/256x144/LSF_01_001_256x144.jpg" class="img-responsive" style="display:none;" onerror="ResizeImage('//d10xkldqejj5hr.cloudfront.net/titles/LSF/512x288/LSF_01_001_512x288.jpg','512x288', '256x144', 'screenshot', this)">
-                                                    <img src="//d10xkldqejj5hr.cloudfront.net/titles/LSF/256x144/LSF_01_002_256x144.jpg" class="img-responsive" style="display:none;" onerror="ResizeImage('//d10xkldqejj5hr.cloudfront.net/titles/LSF/512x288/LSF_01_002_512x288.jpg','512x288', '256x144', 'screenshot', this)">
-                                                    <img src="//d10xkldqejj5hr.cloudfront.net/titles/LSF/256x144/LSF_01_003_256x144.jpg" class="img-responsive" style="display:none;" onerror="ResizeImage('//d10xkldqejj5hr.cloudfront.net/titles/LSF/512x288/LSF_01_003_512x288.jpg','512x288', '256x144', 'screenshot', this)">
-                                                    </div>
-                                                    <div class="default-img">
-                                                        <img src="//d10xkldqejj5hr.cloudfront.net/titles/LSF/LSF_01_MASTER_300x169.jpg" class="img-responsive lazy-load">
-                                                    </div>
-                                                </div>
-                                                <div class="synopsis">
-                                                    <h3 title="A Little Snow Fairy Sugar" data-toggle="tooltip"><a href="/tv/a-little-snow-fairy-sugar">A Little Snow Fairy Sugar</a></h3>
-                                                    <p>&nbsp;<i data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" class="show-info glyphicon glyphicon-modal-window" style="font-size:18px;" data-original-title="" title=""></i>&nbsp;&nbsp;<span>Sugar, an apprentice Snow Fairy, finds help from an unlikely source: a human who can see fairies!</span></p>
-                                                </div>
-                                            </div>
-                                    </div>
-                                </div>
-                            </div> -->
                             <script>         
                                 $(function () {
                                     $('.show-info').popover(
@@ -615,14 +264,6 @@
                                 });
                             </script>
                         </div>
-                        <!-- <div class="navigation">
-                            <div data-section="simulcast">
-                                <div><span class="nav-info nav-selected">Information</span></div>
-                                <div><span class="nav-episode">Episode List</span></div>
-                                <div><span class="nav-recommend">You Might Like</span></div>
-                                <span data-tour-point="5"></span>
-                            </div>    
-                        </div> -->
                 </div>
             </div>
             </div>
