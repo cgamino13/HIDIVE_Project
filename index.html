@@ -139,7 +139,7 @@
                         // For each title need to output the list of Series
                         var Series = TitleRows[i]["Titles"];
                         for(var k = 0; k < Series.length; k++) {
-                            var img = new Image(100,200); // width, height values are optional params 
+                            var img = new Image(); // width, height values are optional params 
                             img.src = Series[k]["KeyArtUrl"];
                             headerTitle.appendChild(img);
                         }
