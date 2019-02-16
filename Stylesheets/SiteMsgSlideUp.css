@@ -1,0 +1,109 @@
+#siteMsgSlideUpBG {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    z-index: 9500;
+    background-color: rgba(0,0,0,.5);
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    transform: translateY(100%);
+}
+
+    #siteMsgSlideUpBG.active {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.3s ease-out;
+    }
+
+
+#siteMsgSlideUp {
+    position: fixed;
+    z-index: 10000;
+    bottom: 3px;
+    left: 3px;
+    right: 3px;
+    border-top: 1px solid rgba(255,255,255,.3);
+    border-radius: 4px;
+    padding: 15px;
+    box-shadow: -5px 0px 10px rgba(0,0,0,.7);
+    transition: background-color .3s ease-out, transform 0.3s ease-out;
+    transform: translateY(100%);
+    pointer-events: auto;
+    font-size: 14px;
+}
+
+    #siteMsgSlideUp a:link, #siteMsgSlideUp a:visited {
+        color: white;
+        text-decoration: underline;
+    }
+
+    #siteMsgSlideUp #slideUpOKBtn, #siteMsgSlideUp #subSuccessBtns {
+        display: none;
+    }
+
+    #siteMsgSlideUp #slideUpOKBtn {
+        border-color: rgba(255,255,255,.2);
+    }
+
+    #siteMsgSlideUp.error {
+        //background-color: rgba(247,142,30,1);
+        background-color: #a94442;
+        //background-color: rgba(35,35,35,1);
+    }
+
+        #siteMsgSlideUp.error .heading::before {
+            font-family: FontAwesome;
+            content: '\f071';
+            margin-right: 10px;
+        }
+
+        #siteMsgSlideUp.error #slideUpOKBtn {
+            display: inline-block;
+        }
+
+    #siteMsgSlideUp.caution {
+        background-color: rgba(247,142,30,1) !important;
+        background-color: rgba(0,174,240,1) !important;
+    }
+
+        #siteMsgSlideUp.caution .heading::before {
+            font-family: FontAwesome;
+            content: '\f05a';
+            margin-right: 10px;
+        }
+
+        #siteMsgSlideUp.caution #slideUpOKBtn {
+            display: inline-block;
+        }
+
+    #siteMsgSlideUp.success {
+        background-color: #303030;
+    }
+
+
+        #siteMsgSlideUp.success::before {
+        }
+
+    #siteMsgSlideUp.default {
+        background-color: #303030;
+    }
+
+        #siteMsgSlideUp.default::before {
+            font-family: FontAwesome;
+            content: '\f05a';
+            margin-right: 10px;
+        }
+
+    #siteMsgSlideUp.active {
+        transition: background-color .3s ease-out, transform 0.3s ease-out;
+        transform: translateY(0);
+    }
+
+#msgClose {
+    text-shadow: none;
+    color: white;
+    font-size: 14px;
+    opacity: 1 !important;
+}
