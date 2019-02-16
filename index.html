@@ -115,7 +115,6 @@
             </div>
             <script>
                 var header = document.querySelector('header');
-                var section = document.querySelector('section');
                 var requestURL = 'https://cgamino13.github.io/HIDIVE_Project/dashboard.json';
                 var request = new XMLHttpRequest();
                 request.open('GET', requestURL);
@@ -124,43 +123,16 @@
                 request.onload = function() {
                     var FullText = request.response;
                     var Full = JSON.parse(FullText);
-                    // populateHeader(Full);
                     showHeroes(Full);
                 }
-                // function populateHeader(jsonObj) {
-                //     var myH1 = document.createElement('h1');
-                //     myH1.textContent = jsonObj['Code'];
-                //     header.appendChild(myH1);
-                //     var myPara = document.createElement('p');
-                //     myPara.textContent = 'Status: ' + jsonObj['Status'] + ' // Formed: ' + jsonObj['Status'];
-                //     header.appendChild(myPara);
-                // }
                 function showHeroes(jsonObj) {
                     var heroes = jsonObj['Data']['TitleRows'][0]['Titles'];
                     for(var i = 0; i < heroes.length; i++) {
                         var myArticle = document.createElement('article');
                         var myH2 = document.createElement('h2');
-                        // var myPara1 = document.createElement('p');
-                        // var myPara2 = document.createElement('p');
-                        // var myPara3 = document.createElement('p');
-                        // var myList = document.createElement('ul');
                         document.write(heroes[i].Name);
                         myH2.textContent = heroes[i].Name;
-                        // myPara1.textContent = 'Secret identity: ' + heroes[i].secretIdentity;
-                        // myPara2.textContent = 'Age: ' + heroes[i].age;
-                        // myPara3.textContent = 'Superpowers:';
-                        // var superPowers = heroes[i].powers;
-                        // for(var j = 0; j < superPowers.length; j++) {
-                        //     var listItem = document.createElement('li');
-                        //     listItem.textContent = superPowers[j];
-                        //     myList.appendChild(listItem);
-                        // }
                         myArticle.appendChild(myH2);
-                        // myArticle.appendChild(myPara1);
-                        // myArticle.appendChild(myPara2);
-                        // myArticle.appendChild(myPara3);
-                        // myArticle.appendChild(myList);
-                        section.appendChild(myArticle);
                     }
                 }
             </script>
