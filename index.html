@@ -116,7 +116,6 @@
             <p id="demo"></p>
             <script>
                 var header = document.querySelector('header');
-                var section = document.querySelector('demo');
 
                 var requestURL = 'https://cgamino13.github.io/HIDIVE_Project/dashboard.json';
                 var request = new XMLHttpRequest();
@@ -136,7 +135,7 @@
                         // document.write(heroes[i].Name);
                         myH2.textContent = heroes[i].Name;
                         myArticle.appendChild(myH2);
-                        section.appendChild(myArticle);
+                        document.getElementById("demo").innerHTML = heroes[i].Name;
                     }
                 }
             </script>
