@@ -124,17 +124,17 @@
                 request.onload = function() {
                     var FullText = request.response;
                     var Full = JSON.parse(FullText);
-                    populateHeader(Full);
+                    // populateHeader(Full);
                     showHeroes(Full);
                 }
-                function populateHeader(jsonObj) {
-                    var myH1 = document.createElement('h1');
-                    myH1.textContent = jsonObj['Code'];
-                    header.appendChild(myH1);
-                    var myPara = document.createElement('p');
-                    myPara.textContent = 'Status: ' + jsonObj['Status'] + ' // Formed: ' + jsonObj['Status'];
-                    header.appendChild(myPara);
-                }
+                // function populateHeader(jsonObj) {
+                //     var myH1 = document.createElement('h1');
+                //     myH1.textContent = jsonObj['Code'];
+                //     header.appendChild(myH1);
+                //     var myPara = document.createElement('p');
+                //     myPara.textContent = 'Status: ' + jsonObj['Status'] + ' // Formed: ' + jsonObj['Status'];
+                //     header.appendChild(myPara);
+                // }
                 function showHeroes(jsonObj) {
                     var heroes = jsonObj['Data']['TitleRows'][0]['Titles'];
                     for(var i = 0; i < heroes.length; i++) {
