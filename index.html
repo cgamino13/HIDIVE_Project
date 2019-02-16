@@ -136,13 +136,16 @@
                         aH2.textContent = TitleRows[i].Name;
                         headerTitle.appendChild(aH2);
 
+                        var separate = document.createElement('div');
+
                         // For each title need to output the list of Series
                         var Series = TitleRows[i]["Titles"];
                         for(var k = 0; k < Series.length; k++) {
                             var img = new Image(); // width, height values are optional params 
                             img.src = Series[k]["KeyArtUrl"];
-                            headerTitle.appendChild(img);
+                            separate.appendChild(img);
                         }
+                        headerTitle.appendChild(separate);
                     }
                     var element = document.getElementById("demo");
                     element.appendChild(headerTitle);
