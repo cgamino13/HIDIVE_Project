@@ -143,6 +143,7 @@
                         for(var k = 0; k < Series.length; k++) {
                             var img = new Image(); // width, height values are optional params 
                             img.src = Series[k]["KeyArtUrl"];
+                            img.style = "width:50%";
                             separate.appendChild(img);
                         }
                         headerTitle.appendChild(separate);
