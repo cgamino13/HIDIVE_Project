@@ -26,3 +26,17 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block"; 
   dots[slideIndex-1].className += " active";
 }
+
+$('#controlR').click(function() {
+  event.preventDefault();
+  $('#content').animate({
+    marginLeft: "-=400px"
+  }, "fast");
+});
+
+$('#controlL').click(function() {
+  event.preventDefault();
+  $('#content').animate({
+    marginLeft: "+=400px"
+  }, "fast");
+});
