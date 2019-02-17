@@ -175,7 +175,8 @@
                         aH2.textContent = TitleRows[i].Name;
                         headerTitle.appendChild(aH2);
 
-                        var separate = document.createElement('div class="responsive"');
+                        var separate = document.createElement('div');
+                        separate.className = "responsive";
 
                         // For each title need to output the list of Series
                         var Series = TitleRows[i]["Titles"];
