@@ -6,6 +6,8 @@
   <title>HIDIVE - Stream DUBCAST℠, Exclusive Anime & More!</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
   <link href="styles/styles.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
   <link rel="icon" href="images/favicon.ico">
   <script type="text/javascript" src="script.js"></script>
   <style>
@@ -115,49 +117,11 @@
             </div>
 
             <!-- Test -->
-            <div class="container">
-                    <h2>Slider - Multiple Items & Responsive</h2>
-                      <div class="row">
-                        <div class="col-md-12 heroSlider-fixed">
-                          <div class="overlay">
-                        </div>
-                           <!-- Slider -->
-                          <div class="slider responsive">
-                            <div>
-                                          <img src="http://placehold.it/200x150" alt="" />
-                                      </div>
-                                      <div>
-                                          <img src="http://placehold.it/200x150" alt="" />
-                                      </div>
-                                      <div>
-                                          <img src="http://placehold.it/200x150" alt="" />
-                                      </div>
-                                      <div>
-                                          <img src="http://placehold.it/200x150" alt="" />
-                                      </div>
-                                      <div>
-                                          <img src="http://placehold.it/200x150" alt="" />
-                                      </div>
-                                      <div>
-                                          <img src="http://placehold.it/200x150" alt="" />
-                                      </div>
-                                      <div>
-                                          <img src="http://placehold.it/200x150" alt="" />
-                                      </div>
-                                      <div>
-                                          <img src="http://placehold.it/200x150" alt="" />
-                                      </div>
-                          </div>
-                                   <!-- control arrows -->
-                                  <div class="prev">
-                                      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                                  </div>
-                                  <div class="next">
-                                      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                  </div>      
-                        </div>
-                      </div>
-                    </div>
+            <div class="your-class">
+                <div><img src="http://placehold.it/200x150" alt="" /></div>
+                <div><img src="http://placehold.it/200x150" alt="" /></div>
+                <div><img src="http://placehold.it/200x150" alt="" /></div>
+              </div>
             <!-- Test -->
 
             <!-- Start of the lists -->
@@ -320,4 +284,14 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.your-class').slick({
+      });
+    });
+    </script>
+</body>
 </html>
