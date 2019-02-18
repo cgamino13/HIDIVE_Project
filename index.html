@@ -142,9 +142,7 @@
             </div>
             <!-- Test -->
             <div class="responsive" id="TestingList">
-                <img src="http://placehold.it/200x150" alt="" />
-                <img src="http://placehold.it/200x150" alt="" />
-                <img src="http://placehold.it/200x150" alt="" />
+                <img src="http://placehold.it/200x150" alt="" id="add"/>
                 <img src="http://placehold.it/200x150" alt="" />
                 <img src="http://placehold.it/200x150" alt="" />
                 <img src="http://placehold.it/200x150" alt="" />
@@ -347,6 +345,7 @@
                             img.style = "width:50%";
                             separate.appendChild(img);
                             element2.appendChild(separate);
+                            document.getElementById("TestingList").appendChild(img);
                         }
                         headerTitle.appendChild(separate);
                     }
