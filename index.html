@@ -154,47 +154,6 @@
             <!-- Test -->
             <!-- Start of the lists -->
             <div class="slideshow-container" id="demo"></div>
-            <script>
-                var header = document.querySelector('header');
-                var requestURL = 'https://cgamino13.github.io/HIDIVE_Project/dashboard.json';
-                var request = new XMLHttpRequest();
-                request.open('GET', requestURL);
-                request.responseType = 'text';
-                request.send();
-                request.onload = function () {
-                    var AllJSON = request.response;
-                    var JSOnText = JSON.parse(AllJSON);
-                    showData(JSOnText);
-                }
-                function showData(jsonObj) {
-                    var TitleRows = jsonObj['Data']['TitleRows'];
-                    var headerTitle = document.createElement("article");
-
-                    for (var i = 0; i < TitleRows.length; i++) {
-                        var aH2 = document.createElement('h2');
-                        aH2.textContent = TitleRows[i].Name;
-                        headerTitle.appendChild(aH2);
-
-                        var separate = document.createElement('div');
-                        separate.className = "responsive";
-
-                        var element2 = document.getElementById("TestingList");
-
-                        // For each title need to output the list of Series
-                        var Series = TitleRows[i]["Titles"];
-                        for (var k = 0; k < Series.length; k++) {
-                            var img = new Image(); // width, height values are optional params 
-                            img.src = Series[k]["KeyArtUrl"];
-                            img.style = "width:50%";
-                            separate.appendChild(img);
-                            element2.appendChild(separate);
-                        }
-                        headerTitle.appendChild(separate);
-                    }
-                    var element = document.getElementById("demo");
-                    element.appendChild(headerTitle);
-                }
-            </script>
             <!-- List -->
             <!-- Need to make x amount of these -->
             <div id="simulcasts" class="section">
@@ -353,19 +312,60 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
     <script type="text/javascript">
+
         $(document).ready(function () {
+
+            var header = document.querySelector('header');
+                var requestURL = 'https://cgamino13.github.io/HIDIVE_Project/dashboard.json';
+                var request = new XMLHttpRequest();
+                request.open('GET', requestURL);
+                request.responseType = 'text';
+                request.send();
+                request.onload = function () {
+                    var AllJSON = request.response;
+                    var JSOnText = JSON.parse(AllJSON);
+                    showData(JSOnText);
+                }
+                function showData(jsonObj) {
+                    var TitleRows = jsonObj['Data']['TitleRows'];
+                    var headerTitle = document.createElement("article");
+
+                    for (var i = 0; i < TitleRows.length; i++) {
+                        var aH2 = document.createElement('h2');
+                        aH2.textContent = TitleRows[i].Name;
+                        headerTitle.appendChild(aH2);
+
+                        var separate = document.createElement('div');
+                        separate.className = "responsive";
+                        var element2 = document.getElementById("TestingList");
+
+                        // For each title need to output the list of Series
+                        var Series = TitleRows[i]["Titles"];
+                        for (var k = 0; k < Series.length; k++) {
+                            var img = new Image(); // width, height values are optional params 
+                            img.src = Series[k]["KeyArtUrl"];
+                            img.style = "width:50%";
+                            separate.appendChild(img);
+                            element2.appendChild(separate);
+                        }
+                        headerTitle.appendChild(separate);
+                    }
+                    var element = document.getElementById("demo");
+                    element.appendChild(headerTitle);
+                }
+
             $('.responsive').slick({
                 dots: true,
                 infinite: false,
                 speed: 300,
-                slidesToShow: 4,
-                slidesToScroll: 4,
+                slidesToShow: 5,
+                slidesToScroll: 5,
                 responsive: [
                     {
                         breakpoint: 1024,
                         settings: {
-                            slidesToShow: 3,
-                            slidesToScroll: 3,
+                            slidesToShow: 5,
+                            slidesToScroll: 5,
                             infinite: true,
                             dots: true
                         }
@@ -373,15 +373,15 @@
                     {
                         breakpoint: 600,
                         settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 2
+                            slidesToShow: 5,
+                            slidesToScroll: 5
                         }
                     },
                     {
                         breakpoint: 480,
                         settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
+                            slidesToShow: 5,
+                            slidesToScroll: 5
                         }
                     }
                 ]
