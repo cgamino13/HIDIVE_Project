@@ -343,19 +343,17 @@
                             var img = new Image(); // width, height values are optional params 
                             img.src = Series[k]["KeyArtUrl"];
                             img.style = "width:50%";
-                            separate.appendChild(img);
-                            element2.appendChild(separate);
-                            document.getElementById("TestingList").appendChild(img);
                             $("#TestingList").append(img);
+                            // separate.appendChild(img);
+                            // element2.appendChild(separate);
+                            // document.getElementById("TestingList").appendChild(img);
                         }
                         headerTitle.appendChild(separate);
-                        $('#TestingList').slick();
                     }
                     var element = document.getElementById("demo");
                     element.appendChild(headerTitle);
                     $('#TestingList').slick();
                 }
-                $('#TestingList').slick();
 
             $('.responsive').slick({
                 dots: true,
