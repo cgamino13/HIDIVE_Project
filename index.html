@@ -151,16 +151,7 @@
                 </div>
             </div>
             <!-- Test Carousel -->
-            <div class="responsive" id="TestingList">
-                <!-- <img src="http://placehold.it/200x150" alt="" />
-                <img src="http://placehold.it/200x150" alt="" />
-                <img src="http://placehold.it/200x150" alt="" />
-                <img src="http://placehold.it/200x150" alt="" />
-                <img src="http://placehold.it/200x150" alt="" />
-                <img src="http://placehold.it/200x150" alt="" />
-                <img src="http://placehold.it/200x150" alt="" />
-                <img src="http://placehold.it/200x150" alt="" /> -->
-            </div>
+            <div class="responsive" id="TestingList"></div>
             <!-- End Test Carousel -->
             <!-- Start of the lists of series -->
             <div class="slideshow-container" id="demo"></div>
@@ -357,15 +348,19 @@
 
                 // For each series need to output the list of Series (Haikyu, SAO, DBZ, etc.)
                 var Series = TitleRows[i]["Titles"];
-                // for (var k = 0; k < Series.length; k++) {
+                for (var k = 0; k < Series.length; k++) {
                 // Trying small scale first
-                for (var k = 0; k < 5; k++) {
+                // for (var k = 0; k < 5; k++) {
                     var img = new Image(); // width, height values are optional params 
                     img.src = Series[k]["KeyArtUrl"];
                     element2.appendChild(img);
                 }
             }
-            $('.responsive').slick();
+            $('.responsive').slick({
+                infinite: true,
+                slidesToShow: 5,
+                slidesToScroll: 5
+            });
         }
 
     </script>
