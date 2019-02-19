@@ -131,8 +131,12 @@
                 <img src="//d10xkldqejj5hr.cloudfront.net/slides/2018/12/HIDIVE_HOMEcarousel_FireTablet_NGNL.jpg"
                     style="width:100%">
             </div>
+            <br>
             <!-- Test Carousel -->
-            <div class="responsive" id="TestingList"></div>
+            <div class="carousel-holder" id="TestingCarousel">
+                <h2 id="TestingHeader"></h2>
+                <div class="responsive" id="TestingList"></div>
+            </div>
             <!-- End Test Carousel -->
             <!-- Start of the lists of series -->
             <div class="slideshow-container" id="demo"></div>
@@ -322,7 +326,7 @@
             // for (var i = 0; i < TitleRows.length; i++) {
             // Trying small scale first
             for (var i = 0; i < 1; i++) {
-                var aH2 = document.createElement('h2');
+                var aH2 = document.getElementById('TestingHeader');
                 aH2.textContent = TitleRows[i].Name;
 
                 var element2 = document.getElementById("TestingList");
@@ -345,6 +349,7 @@
         }
 
         $('.autoplay').slick({
+            dots: true,
             slidesToShow: 1,
             slidesToScroll: 1,
             autoplay: true,
