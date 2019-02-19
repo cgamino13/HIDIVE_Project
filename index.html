@@ -152,9 +152,9 @@
             </div>
             <!-- Test Carousel -->
             <div class="responsive" id="TestingList">
-                <img src="http://placehold.it/200x150" alt="" />
-                <img src="http://placehold.it/200x150" alt="" />
                 <!-- <img src="http://placehold.it/200x150" alt="" />
+                <img src="http://placehold.it/200x150" alt="" />
+                <img src="http://placehold.it/200x150" alt="" />
                 <img src="http://placehold.it/200x150" alt="" />
                 <img src="http://placehold.it/200x150" alt="" />
                 <img src="http://placehold.it/200x150" alt="" />
@@ -343,12 +343,8 @@
         // Sending JSON to Slick
         function showData(jsonObj) {
 
-            // // Unslicking div
-            // $('.responsive').slick('unslick');
-
             // Getting title rows
             var TitleRows = jsonObj['Data']['TitleRows'];
-            // var headerTitle = document.createElement("article");
 
             // For each Row (Simulcast, Continue Watching, Etc.)
             // for (var i = 0; i < TitleRows.length; i++) {
@@ -356,10 +352,7 @@
             for (var i = 0; i < 1; i++) {
                 var aH2 = document.createElement('h2');
                 aH2.textContent = TitleRows[i].Name;
-                // headerTitle.appendChild(aH2);
 
-                // var separate = document.createElement('div');
-                // separate.className = "responsive";
                 var element2 = document.getElementById("TestingList");
 
                 // For each series need to output the list of Series (Haikyu, SAO, DBZ, etc.)
@@ -371,10 +364,7 @@
                     img.src = Series[k]["KeyArtUrl"];
                     element2.appendChild(img);
                 }
-                // headerTitle.appendChild(separate);
             }
-            // var element = document.getElementById("demo");
-            // element.appendChild(headerTitle);
             $('.responsive').slick();
         }
 
