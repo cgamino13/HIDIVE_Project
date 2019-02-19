@@ -122,33 +122,18 @@
                 <h1></h1>
             </div>
             <!-- Top Slideshow -->
-            <div class="carousel-wrapper overflow-auto bottom-gutter-15">
+            <div class="autoplay">
                 <!-- Slideshow container -->
                 <div class="slideshow-container">
                     <!-- Full-width images with number and caption text -->
-                    <div class="mySlides fade">
                         <img src="//d10xkldqejj5hr.cloudfront.net/slides/2019/02/Home_Carousel/HIDIVE_HOMEcarousel_FallLoveSimulSignUp.jpg"
                             style="width:100%">
-                    </div>
-                    <div class="mySlides mySlides2 fade">
                         <img src="//d10xkldqejj5hr.cloudfront.net/slides/2019/01/HIDIVE_HOMEcarousel_20percentOff_Promo UPDATED.gif"
                             style="width:100%">
-                    </div>
-                    <div class="mySlides mySlides2 fade">
                         <img src="//d10xkldqejj5hr.cloudfront.net/slides/2018/12/HIDIVE_HOMEcarousel_FireTablet_NGNL.jpg"
                             style="width:100%">
-                    </div>
-                    <!-- Next and previous buttons -->
-                    <a class="prev slick-arrow slick-active" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next slick-arrow slick-active" onclick="plusSlides(1)">&#10095;</a>
                 </div>
                 <br>
-                <!-- The dots/circles -->
-                <div style="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                </div>
             </div>
             <!-- Test Carousel -->
             <div class="responsive" id="TestingList"></div>
@@ -362,6 +347,14 @@
                 slidesToScroll: 5
             });
         }
+
+        $('.autoplay').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+        });
+	
 
     </script>
 </body>
