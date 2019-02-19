@@ -301,6 +301,14 @@
     <script type="text/javascript" src="slick/slick.min.js"></script>
     <script type="text/javascript">
 
+        $('.autoplay').slick({
+            dots: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+        });
+
         // Start script for getting json data
         // Getting json data
         var requestURL = 'https://cgamino13.github.io/HIDIVE_Project/dashboard.json';
@@ -369,16 +377,6 @@
                 slidesToScroll: 5
             });
         }
-
-        $('.autoplay').slick({
-            dots: true,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 2000,
-        });
-	
-
     </script>
 </body>
 
