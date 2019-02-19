@@ -154,12 +154,12 @@
             <div class="responsive" id="TestingList">
                 <img src="http://placehold.it/200x150" alt="" />
                 <img src="http://placehold.it/200x150" alt="" />
+                <!-- <img src="http://placehold.it/200x150" alt="" />
                 <img src="http://placehold.it/200x150" alt="" />
                 <img src="http://placehold.it/200x150" alt="" />
                 <img src="http://placehold.it/200x150" alt="" />
                 <img src="http://placehold.it/200x150" alt="" />
-                <img src="http://placehold.it/200x150" alt="" />
-                <img src="http://placehold.it/200x150" alt="" />
+                <img src="http://placehold.it/200x150" alt="" /> -->
             </div>
             <!-- End Test Carousel -->
             <!-- Start of the lists of series -->
@@ -319,14 +319,16 @@
         </div>
     </div>
     <!-- Scripts -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
     <script type="text/javascript">
 
         // Start script for getting json data
-        var header = document.querySelector('header');
+        // Getting json data
         var requestURL = 'https://cgamino13.github.io/HIDIVE_Project/dashboard.json';
+        // Handling JSON
         var request = new XMLHttpRequest();
         request.open('GET', requestURL);
         request.responseType = 'text';
@@ -334,35 +336,39 @@
         request.onload = function () {
             var AllJSON = request.response;
             var JSOnText = JSON.parse(AllJSON);
+            // Sending JSON to Slick
             showData(JSOnText);
         }
-        function showData(jsonObj) {
-            var TitleRows = jsonObj['Data']['TitleRows'];
-            var headerTitle = document.createElement("article");
 
+        // Sending JSON to Slick
+        function showData(jsonObj) {
+            // Getting title rows
+            var TitleRows = jsonObj['Data']['TitleRows'];
+            // var headerTitle = document.createElement("article");
+
+            // For each Row (Simulcast, Continue Watching, Etc.)
             for (var i = 0; i < TitleRows.length; i++) {
                 var aH2 = document.createElement('h2');
                 aH2.textContent = TitleRows[i].Name;
-                headerTitle.appendChild(aH2);
+                // headerTitle.appendChild(aH2);
 
-                var separate = document.createElement('div');
-                separate.className = "responsive";
-
+                // var separate = document.createElement('div');
+                // separate.className = "responsive";
                 var element2 = document.getElementById("TestingList");
 
-                // For each title need to output the list of Series
+                // For each series need to output the list of Series (Haikyu, SAO, DBZ, etc.)
                 var Series = TitleRows[i]["Titles"];
                 for (var k = 0; k < Series.length; k++) {
                     var img = new Image(); // width, height values are optional params 
                     img.src = Series[k]["KeyArtUrl"];
                     img.style = "width:50%";
-                    separate.appendChild(img);
-                    element2.appendChild(separate);
+                    // separate.appendChild(img);
+                    // element2.appendChild(separate);
                 }
-                headerTitle.appendChild(separate);
+                // headerTitle.appendChild(separate);
             }
-            var element = document.getElementById("demo");
-            element.appendChild(headerTitle);
+            // var element = document.getElementById("demo");
+            // element.appendChild(headerTitle);
         }
 
         $('.responsive').slick();
