@@ -3,13 +3,18 @@
 
 <head>
     <meta charset="utf-8">
+    <!-- Top icon -->
     <title>HIDIVE - Stream DUBCAST℠, Exclusive Anime & More!</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"> -->
+    <!-- stylesheets -->
     <link href="styles/styles.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico">
+    <!-- Script -->
     <script type="text/javascript" src="script.js"></script>
+    <!-- Background link -->
     <style>
         body {
             background-image: url("images/HD_sitebackimage_5_poster3_compressed.jpg");
@@ -18,9 +23,11 @@
 </head>
 
 <body>
+    <!-- Top Navbar -->
     <nav class="navbar navbar-fixed-top">
         <div class="container-fluid top-padding-15 bottom-gutter-5">
             <div class="row">
+                <!-- Top Row -->
                 <div class="col-sm-9">
                     <ul class="list-inline nav-list">
                         <li style="width:160px;">
@@ -52,6 +59,7 @@
                         </li>
                     </ul>
                 </div>
+                <!-- Bottom Row -->
                 <div class="col-sm-3">
                     <div class="top-gutter-5">
                         <div class="text-right">
@@ -106,7 +114,9 @@
             </div>
         </div>
     </nav>
+    <!-- Rest of Page -->
     <div class="container-fluid">
+        <!-- Thinner inner page -->
         <div class="body-bg-color top-page-offset">
             <div class="clearfix">
                 <h1></h1>
@@ -140,7 +150,7 @@
                     <span class="dot" onclick="currentSlide(3)"></span>
                 </div>
             </div>
-            <!-- Test -->
+            <!-- Test Carousel -->
             <div class="responsive" id="TestingList">
                 <img src="http://placehold.it/200x150" alt="" />
                 <img src="http://placehold.it/200x150" alt="" />
@@ -151,51 +161,10 @@
                 <img src="http://placehold.it/200x150" alt="" />
                 <img src="http://placehold.it/200x150" alt="" />
             </div>
-            <!-- Test -->
-            <!-- Start of the lists -->
+            <!-- End Test Carousel -->
+            <!-- Start of the lists of series -->
             <div class="slideshow-container" id="demo"></div>
-            <script>
-                var header = document.querySelector('header');
-                var requestURL = 'https://cgamino13.github.io/HIDIVE_Project/dashboard.json';
-                var request = new XMLHttpRequest();
-                request.open('GET', requestURL);
-                request.responseType = 'text';
-                request.send();
-                request.onload = function () {
-                    var AllJSON = request.response;
-                    var JSOnText = JSON.parse(AllJSON);
-                    showData(JSOnText);
-                }
-                function showData(jsonObj) {
-                    var TitleRows = jsonObj['Data']['TitleRows'];
-                    var headerTitle = document.createElement("article");
-
-                    for (var i = 0; i < TitleRows.length; i++) {
-                        var aH2 = document.createElement('h2');
-                        aH2.textContent = TitleRows[i].Name;
-                        headerTitle.appendChild(aH2);
-
-                        var separate = document.createElement('div');
-                        separate.className = "responsive";
-
-                        var element2 = document.getElementById("TestingList");
-
-                        // For each title need to output the list of Series
-                        var Series = TitleRows[i]["Titles"];
-                        for (var k = 0; k < Series.length; k++) {
-                            var img = new Image(); // width, height values are optional params 
-                            img.src = Series[k]["KeyArtUrl"];
-                            img.style = "width:50%";
-                            separate.appendChild(img);
-                            element2.appendChild(separate);
-                        }
-                        headerTitle.appendChild(separate);
-                    }
-                    var element = document.getElementById("demo");
-                    element.appendChild(headerTitle);
-                }
-            </script>
-            <!-- List -->
+            <!-- End of the lists of series -->
             <!-- Need to make x amount of these -->
             <div id="simulcasts" class="section">
                 <h1 data-tour-point="0">Simulcasts</h1>
@@ -349,44 +318,55 @@
             </div>
         </div>
     </div>
+    <!-- Scripts -->
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('.responsive').slick({
-                dots: true,
-                infinite: false,
-                speed: 300,
-                slidesToShow: 5,
-                slidesToScroll: 5,
-                responsive: [
-                    {
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 5,
-                            slidesToScroll: 5,
-                            infinite: true,
-                            dots: true
-                        }
-                    },
-                    {
-                        breakpoint: 600,
-                        settings: {
-                            slidesToShow: 5,
-                            slidesToScroll: 5
-                        }
-                    },
-                    {
-                        breakpoint: 480,
-                        settings: {
-                            slidesToShow: 5,
-                            slidesToScroll: 5
-                        }
-                    }
-                ]
-            });
-        });
+
+        // Start script for getting json data
+        var header = document.querySelector('header');
+        var requestURL = 'https://cgamino13.github.io/HIDIVE_Project/dashboard.json';
+        var request = new XMLHttpRequest();
+        request.open('GET', requestURL);
+        request.responseType = 'text';
+        request.send();
+        request.onload = function () {
+            var AllJSON = request.response;
+            var JSOnText = JSON.parse(AllJSON);
+            showData(JSOnText);
+        }
+        function showData(jsonObj) {
+            var TitleRows = jsonObj['Data']['TitleRows'];
+            var headerTitle = document.createElement("article");
+
+            for (var i = 0; i < TitleRows.length; i++) {
+                var aH2 = document.createElement('h2');
+                aH2.textContent = TitleRows[i].Name;
+                headerTitle.appendChild(aH2);
+
+                var separate = document.createElement('div');
+                separate.className = "responsive";
+
+                var element2 = document.getElementById("TestingList");
+
+                // For each title need to output the list of Series
+                var Series = TitleRows[i]["Titles"];
+                for (var k = 0; k < Series.length; k++) {
+                    var img = new Image(); // width, height values are optional params 
+                    img.src = Series[k]["KeyArtUrl"];
+                    img.style = "width:50%";
+                    separate.appendChild(img);
+                    element2.appendChild(separate);
+                }
+                headerTitle.appendChild(separate);
+            }
+            var element = document.getElementById("demo");
+            element.appendChild(headerTitle);
+        }
+
+        $('.single-item').slick();
     </script>
 </body>
 
