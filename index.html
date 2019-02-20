@@ -133,12 +133,6 @@
             </div>
             <div id="TopSlideshow"></div>
             <br>
-            <!-- Test Carousel -->
-            <!-- <div class="carousel-holder" id="TestingCarousel">
-                <h2 id="TestingHeader"></h2>
-                <div class="responsive" id="TestingList"></div>
-            </div> -->
-            <!-- End Test Carousel -->
             <!-- Start of the lists of series -->
             <div class="slideshow-container" id="demo"></div>
             <!-- End of the lists of series -->
@@ -327,12 +321,6 @@
 
         // Sending JSON to Slick
         function showData(jsonObj) {
-
-            // <div class="carousel-holder" id="TestingCarousel">
-            //     <h2 id="TestingHeader"></h2>
-            //     <div class="responsive" id="TestingList"></div>
-            // </div>
-            
             var starting = document.getElementById('TopSlideshow');
 
             // Getting title rows
@@ -340,9 +328,6 @@
 
             // For each Row (Simulcast, Continue Watching, Etc.)
             for (var i = 0; i < TitleRows.length; i++) {
-            // Trying small scale first
-            // for (var i = 0; i < 1; i++) {
-
                 var div = document.createElement("div");
                 var H2 = document.createElement("h2");
 
@@ -353,19 +338,11 @@
                 var divResponsive = document.createElement("div");
                 divResponsive.setAttribute('class', 'responsive');
 
-                // var aH2 = document.getElementById('TestingHeader');
-                // aH2.textContent = TitleRows[i].Name;
-
-                // var element2 = document.getElementById("TestingList");
-
                 // For each series need to output the list of Series (Haikyu, SAO, DBZ, etc.)
                 var Series = TitleRows[i]["Titles"];
                 for (var k = 0; k < Series.length; k++) {
-                // Trying small scale first
-                // for (var k = 0; k < 5; k++) {
                     var img = new Image(); // width, height values are optional params 
                     img.src = Series[k]["KeyArtUrl"];
-                    // element2.appendChild(img);
                     divResponsive.appendChild(img);
                 }
                 div.appendChild(divResponsive);
