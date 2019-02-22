@@ -233,7 +233,10 @@
                     button.setAttribute('src', Series[k]["KeyArtUrl"]);
                     // button.setAttribute('onclick', 'myFunction(' + i + ',' + Series[k] + ')');
 
+                    console.log(i);
+
                     button.onclick = function (i, Series) {
+                        console.log('in' + i);
                         myNewFunction(i, Series);
                     }
 
