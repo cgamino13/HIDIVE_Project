@@ -202,11 +202,13 @@
                 // Append all images
                 div.appendChild(divResponsive);
 
+                // Testing hidden
                 var hiddenDiv = document.createElement("div");
                 hiddenDiv.setAttribute('id', 'myDIV');
                 hiddenDiv.setAttribute('style', 'display: none;');
+                hiddenDiv.appendChild(document.createElement("h2").textContent("HI"));
 
-                div.appendChild();
+                div.appendChild(hiddenDiv);
 
                 starting.appendChild(div);
             }
