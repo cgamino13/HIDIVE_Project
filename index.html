@@ -283,13 +283,15 @@
 
         function myFunction(i, series) {
             var x = document.getElementById("myDIV" + i);
+
+            x.setAttribute('style', "background-image: url(" + series.KeyArtUrl + ");");
+
             if (x.style.display === "none") {
                 x.style.display = "block";
             } else {
                 x.style.display = "none";
             }
 
-            x.setAttribute('style', "background-image: url(" + series.KeyArtUrl + ");");
 
             document.getElementById('myDIVH2' + i).innerHTML = series.Name;
             document.getElementById('p' + i + '0').innerHTML = series.SeasonName;
