@@ -195,7 +195,7 @@
                     var button = document.createElement("input");
                     button.setAttribute('type', 'image');
                     button.setAttribute('src', Series[k]["KeyArtUrl"]);
-                    button.setAttribute('onclick', 'myFunction()');
+                    button.setAttribute('onclick', 'myFunction(' + i + ')');
                     // Append a single image
                     divResponsive.appendChild(button);
                 }
@@ -204,7 +204,8 @@
 
                 // Testing hidden
                 var hiddenDiv = document.createElement("div");
-                hiddenDiv.setAttribute('id', 'myDIV');
+                hiddenDiv.setAttribute('class', 'myDIV');
+                hiddenDiv.setAttribute('id', 'myDIV' + i);
                 hiddenDiv.setAttribute('style', 'display: none;');
                 hiddenDiv.appendChild(document.createElement("h2"));
 
@@ -221,8 +222,8 @@
     </script>
     <script type="text/javascript">
     
-        function myFunction() {
-            var x = document.getElementById("myDIV");
+        function myFunction(i) {
+            var x = document.getElementById("myDIV" + i);
             if (x.style.display === "none") {
                 x.style.display = "block";
             } else {
