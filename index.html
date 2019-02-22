@@ -251,6 +251,7 @@
 
                 for(var m = 0; m < 5; m++) {
                     var testP = document.createElement("p");
+                    hiddenDiv.setAttribute('class', 'pWindow');
                     testP.setAttribute('id', 'p' + i + m);
                     hiddenDiv.appendChild(testP);
                 }
@@ -287,9 +288,12 @@
             } else {
                 x.style.display = "none";
             }
+
+            x.setAttribute('style', "background-image: url(" + series.KeyArtUrl + "); height: 400px; width: 400px;");
+
             document.getElementById('myDIVH2' + i).innerHTML = series.Name;
             document.getElementById('p' + i + '0').innerHTML = series.SeasonName;
-            document.getElementById('p' + i + '1').innerHTML = series.OverallRating;
+            document.getElementById('p' + i + '1').innerHTML = "Rating: " + series.OverallRating;
             document.getElementById('p' + i + '2').innerHTML = series.MediumSynopsis;
             document.getElementById('p' + i + '3').innerHTML = series.FirstPremiereDate;
             document.getElementById('p' + i + '4').innerHTML = series.Rating;

@@ -7,6 +7,12 @@
   color: black;
 }
 
+.pWindow {
+  float: left;
+  width: 300px;
+  padding: 10px;
+}
+
 a {
   background-color: transparent;
   color: #337ab7;
