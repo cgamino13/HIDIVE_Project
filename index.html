@@ -224,22 +224,13 @@
 
                 // For each series need to output the list of Series (Haikyu, SAO, DBZ, etc.)
                 var Series = TitleRows[i]["Titles"];
-
                 for (var k = 0; k < Series.length; k++) {
 
                     // A button
                     var button = document.createElement("input");
                     button.setAttribute('type', 'image');
                     button.setAttribute('src', Series[k]["KeyArtUrl"]);
-                    // button.setAttribute('onclick', 'myFunction(' + i + ',' + Series[k] + ')');
-
-                    console.log(i);
-
-                    button.onclick = function (i, Series) {
-                        console.log('in' + i);
-                        myNewFunction(i, Series);
-                    }
-
+                    button.setAttribute('onclick', 'myFunction(' + i + JSON.stringify(Series) + ')');
                     // Append a single image
                     divResponsive.appendChild(button);
                 }
@@ -269,33 +260,20 @@
     <script type="text/javascript">
     
         // Search through the JSON data to find data and populate the blanks
-
         // Name, SeasonName, OverallRating, MediumSynopsis
         // FirstPremiereDate, Rating
 
         //Have RokuHDArtUrl on the side
 
-        function myNewFunction(i, series) {
-            var x = document.getElementById("myDIV1");
+        function myFunction(i, series) {
+            var x = document.getElementById("myDIV" + i);
             if (x.style.display === "none") {
                 x.style.display = "block";
             } else {
                 x.style.display = "none";
             }
-            console.log(series[0].Name);
-            console.log(i);
-            // document.getElementById('myDIVH2' + i).innerHTML = "new" + i + series;
+            document.getElementById('myDIVH2' + i).innerHTML = "new" + i + " " + series;
         }
-
-        // function myFunction(i, series) {
-        //     var x = document.getElementById("myDIV" + i);
-        //     if (x.style.display === "none") {
-        //         x.style.display = "block";
-        //     } else {
-        //         x.style.display = "none";
-        //     }
-        //     document.getElementById('myDIVH2' + i).innerHTML = "new" + i + series;
-        // }
 
     </script>
 </body>
