@@ -251,7 +251,7 @@
 
                 for(var m = 0; m < 5; m++) {
                     var testP = document.createElement("p");
-                    // hiddenDiv.setAttribute('class', 'pWindow');
+                    hiddenDiv.setAttribute('class', 'pWindow');
                     testP.setAttribute('id', 'p' + i + m);
                     hiddenDiv.appendChild(testP);
                 }
@@ -283,8 +283,6 @@
 
         function myFunction(i, series) {
             var x = document.getElementById("myDIV" + i);
-
-            x.setAttribute('style', "background-image: url(" + series.KeyArtUrl + ");");
 
             if (x.style.display === "none") {
                 x.style.display = "block";
