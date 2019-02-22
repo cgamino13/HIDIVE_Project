@@ -230,7 +230,7 @@
                     var button = document.createElement("input");
                     button.setAttribute('type', 'image');
                     button.setAttribute('src', Series[k]["KeyArtUrl"]);
-                    button.setAttribute('onclick', 'myFunction(' + i + ')');
+                    button.setAttribute('onclick', 'myFunction(' + i + ',' + Series[k] + ')');
                     // Append a single image
                     divResponsive.appendChild(button);
                 }
@@ -266,14 +266,14 @@
 
         //Have RokuHDArtUrl on the side
 
-        function myFunction(i) {
+        function myFunction(i, series) {
             var x = document.getElementById("myDIV" + i);
             if (x.style.display === "none") {
                 x.style.display = "block";
             } else {
                 x.style.display = "none";
             }
-            document.getElementById('myDIVH2' + i).innerHTML = "new" + i;
+            document.getElementById('myDIVH2' + i).innerHTML = "new" + i + series;
         }
 
     </script>
