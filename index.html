@@ -251,7 +251,7 @@
 
                 for(var m = 0; m < 5; m++) {
                     var testP = document.createElement("p");
-                    hiddenDiv.setAttribute('class', 'pWindow');
+                    // hiddenDiv.setAttribute('class', 'pWindow');
                     testP.setAttribute('id', 'p' + i + m);
                     hiddenDiv.appendChild(testP);
                 }
@@ -289,7 +289,7 @@
                 x.style.display = "none";
             }
 
-            x.setAttribute('style', "background-image: url(" + series.KeyArtUrl + "); height: 400px; width: 400px;");
+            x.setAttribute('style', "background-image: url(" + series.KeyArtUrl + ");");
 
             document.getElementById('myDIVH2' + i).innerHTML = series.Name;
             document.getElementById('p' + i + '0').innerHTML = series.SeasonName;
