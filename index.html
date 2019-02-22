@@ -291,12 +291,13 @@
                 x.style.display = "none";
             }
 
+            var d = new Date(series.FirstPremiereDate);
 
             document.getElementById('myDIVH2' + i).innerHTML = series.Name;
             document.getElementById('p' + i + '0').innerHTML = series.SeasonName;
             document.getElementById('p' + i + '1').innerHTML = "Rating: " + series.OverallRating;
             document.getElementById('p' + i + '2').innerHTML = series.MediumSynopsis;
-            document.getElementById('p' + i + '3').innerHTML = series.FirstPremiereDate;
+            document.getElementById('p' + i + '3').innerHTML = "Original Premiere: " + d.toLocaleString;
             document.getElementById('p' + i + '4').innerHTML = series.Rating;
 
             document.getElementById('im' + i).setAttribute('src', series.KeyArtUrl);
