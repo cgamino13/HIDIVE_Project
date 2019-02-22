@@ -224,6 +224,7 @@
 
                 // For each series need to output the list of Series (Haikyu, SAO, DBZ, etc.)
                 var Series = TitleRows[i]["Titles"];
+
                 for (var k = 0; k < Series.length; k++) {
 
                     // A button
@@ -232,16 +233,8 @@
                     button.setAttribute('src', Series[k]["KeyArtUrl"]);
                     // button.setAttribute('onclick', 'myFunction(' + i + ',' + Series[k] + ')');
 
-                    button.onclick = function (i, series) {
-                        var x = document.getElementById("myDIV1");
-                        if (x.style.display === "none") {
-                            x.style.display = "block";
-                        } else {
-                            x.style.display = "none";
-                        }
-                        console.log(series);
-                        console.log(i);
-                        // document.getElementById('myDIVH2' + i).innerHTML = "new" + i + series;
+                    button.onclick = function (i, Series) {
+                        myNewFunction(i, Series);
                     }
 
                     // Append a single image
@@ -278,6 +271,18 @@
         // FirstPremiereDate, Rating
 
         //Have RokuHDArtUrl on the side
+
+        function myNewFunction(i, series) {
+            var x = document.getElementById("myDIV1");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+            console.log(series);
+            console.log(i);
+            // document.getElementById('myDIVH2' + i).innerHTML = "new" + i + series;
+        }
 
         // function myFunction(i, series) {
         //     var x = document.getElementById("myDIV" + i);
