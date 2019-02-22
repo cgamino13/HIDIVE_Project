@@ -242,7 +242,9 @@
                 hiddenDiv.setAttribute('class', 'myDIV');
                 hiddenDiv.setAttribute('id', 'myDIV' + i);
                 hiddenDiv.setAttribute('style', 'display: none;');
-                hiddenDiv.appendChild(document.createElement("h2"));
+                var testH2 = document.createElement("h2");
+                testH2.setAttribute('id', 'myDIVH2' + i);
+                hiddenDiv.appendChild(testH2);
 
                 div.appendChild(hiddenDiv);
 
@@ -271,6 +273,7 @@
             } else {
                 x.style.display = "none";
             }
+            document.getElementById('myDIVH2' + i).innerHTML = "new" + i;
         }
 
     </script>
