@@ -233,7 +233,7 @@
                     // button.setAttribute('onclick', 'myFunction(' + i + ',' + Series[k] + ')');
 
                     button.onclick = function (i, series) {
-                        var x = document.getElementById("myDIV" + series);
+                        var x = document.getElementById("myDIV" + i);
                         if (x.style.display === "none") {
                             x.style.display = "block";
                         } else {
