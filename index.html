@@ -242,7 +242,6 @@
                 hiddenDiv.setAttribute('class', 'myDIV');
                 hiddenDiv.setAttribute('id', 'myDIV' + i);
                 hiddenDiv.setAttribute('style', 'display: none;');
-                hiddenDiv.setAttribute('style', 'backgroundImage: none;');
 
                 var testH2 = document.createElement("h2");
                 testH2.setAttribute('id', 'myDIVH2' + i);
@@ -301,11 +300,9 @@
             document.getElementById('p' + i + '3').innerHTML = "Original Premiere: " + d.toLocaleString();
             document.getElementById('p' + i + '4').innerHTML = series.Rating;
 
-            x.style.backgroundImage = series.RokuSDArtUrl;
-
-            // document.getElementById('im' + i).setAttribute('src', series.RokuSDArtUrl);
-            // document.getElementById('im' + i).setAttribute('width', '128');
-            // document.getElementById('im' + i).setAttribute('height', '128');
+            document.getElementById('im' + i).setAttribute('src', series.RokuSDArtUrl);
+            document.getElementById('im' + i).setAttribute('width', '128');
+            document.getElementById('im' + i).setAttribute('height', '128');
 
         }
 
