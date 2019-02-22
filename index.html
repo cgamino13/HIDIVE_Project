@@ -242,9 +242,18 @@
                 hiddenDiv.setAttribute('class', 'myDIV');
                 hiddenDiv.setAttribute('id', 'myDIV' + i);
                 hiddenDiv.setAttribute('style', 'display: none;');
+
                 var testH2 = document.createElement("h2");
                 testH2.setAttribute('id', 'myDIVH2' + i);
                 hiddenDiv.appendChild(testH2);
+
+                // Have to append SeasonName, OverallRating, MediumSynopsis, FirstPremiereDate, Rating
+
+                for(var m = 0; m < 5; m++) {
+                    var testP = document.createElement("p");
+                    testP.setAttribute('id', 'p' + i + m);
+                    hiddenDiv.appendChild(testP);
+                }
 
                 div.appendChild(hiddenDiv);
 
@@ -273,10 +282,11 @@
                 x.style.display = "none";
             }
             document.getElementById('myDIVH2' + i).innerHTML = series.Name;
-
-            var seasonN = document.createElement('p');
-            seasonN.innerHTML = series.SeasonName;
-            x.appendChild(seasonN);
+            document.getElementById('p' + i + '0').innerHTML = series.SeasonName;
+            document.getElementById('p' + i + '1').innerHTML = series.OverallRating;
+            document.getElementById('p' + i + '2').innerHTML = series.MediumSynopsis;
+            document.getElementById('p' + i + '3').innerHTML = series.FirstPremiereDate;
+            document.getElementById('p' + i + '4').innerHTML = series.Rating;
         }
 
     </script>
