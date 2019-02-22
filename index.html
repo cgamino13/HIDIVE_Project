@@ -232,8 +232,8 @@
                     button.setAttribute('src', Series[k]["KeyArtUrl"]);
                     // button.setAttribute('onclick', 'myFunction(' + i + ',' + Series[k] + ')');
 
-                    button.onclick = function () {
-                        var x = document.getElementById("myDIV1");
+                    button.onclick = function (i, series) {
+                        var x = document.getElementById("myDIV" + series);
                         if (x.style.display === "none") {
                             x.style.display = "block";
                         } else {
