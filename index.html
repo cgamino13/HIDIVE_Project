@@ -274,7 +274,8 @@
             }
             document.getElementById('myDIVH2' + i).innerHTML = series.Name;
 
-            var seasonN = document.createElement('p').innerHTML = series.SeasonName;
+            var seasonN = document.createElement('p');
+            seasonN.innerHTML = series.SeasonName;
             x.appendChild(seasonN);
         }
 
