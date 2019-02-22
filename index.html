@@ -255,6 +255,11 @@
                     hiddenDiv.appendChild(testP);
                 }
 
+                var im = document.createElement("img");
+                im.setAttribute('id', 'im' + i);
+                hiddenDiv.appendChild(im);
+
+
                 div.appendChild(hiddenDiv);
 
                 starting.appendChild(div);
@@ -287,6 +292,8 @@
             document.getElementById('p' + i + '2').innerHTML = series.MediumSynopsis;
             document.getElementById('p' + i + '3').innerHTML = series.FirstPremiereDate;
             document.getElementById('p' + i + '4').innerHTML = series.Rating;
+
+            document.getElementById('im' + i).setAttribute('src', series.RokuHDArtUrl);
         }
 
     </script>
