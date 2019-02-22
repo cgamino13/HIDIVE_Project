@@ -138,6 +138,40 @@
             <!-- End of the lists of series -->
         </div>
     </div>
+    <footer class="tb-padding-10 overflow-auto">
+        <div class="col-md-9">
+            <ul class="list-inline">
+                <li><a id="footerSignup" href="/signup">Sign Up</a></li>
+                <li><a href="//help.hidive.com/" target="_blank">Help Center</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a id="contactUs" href="javascript:void(0);">Contact Us</a></li>
+                <li><a href="/careers">Careers</a></li>
+                <li><a href="/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/terms-of-use">Terms of Use</a></li>
+                <li>
+                    <a href="/news">Press</a>
+                </li>
+                <li>
+                    <a href="/devices">Devices</a>
+                </li>
+            </ul>
+            <ul class="list-inline">
+                <li>HIDIVE and the logos ™ and © HIDIVE, LLC. <span><em
+                            style="color:transparent;">2019.0220.2204.468</em></span></li>
+            </ul>
+        </div>
+        <div class="col-md-3 text-right">
+            <a class="social-icons facebook2" id="facebook2_footer_anchor" href="//www.facebook.com/HIDIVEofficial"
+                target="_blank"><i class="fa-facebook-official fa icon-1x"></i></a>
+            <a class="social-icons twitter2" id="twitter2_footer_anchor" href="//www.twitter.com/HIDIVEofficial"
+                target="_blank"><i class="fa-twitter fa icon-1x"></i></a>
+            <a class="social-icons youtube2" id="youtube2_footer_anchor"
+                href="//www.youtube.com/channel/UCeFzTMpr7ik6oU5MT_YAYzg" target="_blank"><i
+                    class="fa-youtube fa icon-1x"></i></a>
+            <a class="social-icons instagram2" id="instagram2_footer_anchor" href="//www.instagram.com/HIDIVEofficial"
+                target="_blank"><i class="fa-instagram fa icon-1x"></i></a>
+        </div>
+    </footer>
     <!-- Scripts -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -222,6 +256,13 @@
     </script>
     <script type="text/javascript">
     
+        // Search through the JSON data to find data and populate the blanks
+
+        // Name, SeasonName, OverallRating, MediumSynopsis
+        // FirstPremiereDate, Rating
+
+        //Have RokuHDArtUrl on the side
+
         function myFunction(i) {
             var x = document.getElementById("myDIV" + i);
             if (x.style.display === "none") {
@@ -233,5 +274,55 @@
 
     </script>
 </body>
+
+<!-- <div class="details" style="opacity: 1;">
+    <div class="information animated fadeIn">
+        <div class="display-table">
+            <div class="table-cell title-text">
+                <div class="text-container" style="opacity: 1; margin-left: 0px;">
+                    <h1 data-tour-point="1"><a href="/tv/land-of-the-lustrous">Land of the Lustrous</a></h1>
+                    <h2>Season 1</h2>
+                    <div class="RatingStars">
+                        <span class="stars title-793"
+                            data-json="{&quot;titleID&quot;: 793, &quot;overall&quot;: 4.86, &quot;isUser&quot;: false, &quot;userRating&quot;: 0, &quot;hash&quot;: &quot;62f0edb4ceba274b8002c5b562732831e28bab48&quot;}">
+                            <span class="star-rating" data-title="793"
+                                style="vertical-align:middle;display:inline-block;"></span>
+                            <span style="font-size:12px;vertical-align:middle;"> (Rating requires login) - <a
+                                    href="/account/login">Log In</a> | <a href="/signup">Sign Up</a></span>
+                        </span>
+                    </div>
+                    <div class="top-gutter-10" data-tour-point="2">
+                        <button type="button" class="btn btn-xs btn-primary" onclick="subscribeNow();">
+                            <span class="fa fa-forward" style="line-height:1em;"></span>
+                            <span class="btn-text hidden-xs"> Add To Queue</span>
+                            <span class="btn-text visible-xs"> (+)</span>
+                        </button>
+                        <button type="button" class="btn btn-xs btn-primary" onclick="subscribeNow();">
+                            <span class="fa fa-heart" style=""></span>
+                            <span class="btn-text hidden-xs"> Add Favorite</span>
+                            <span class="btn-text visible-xs"> (+)</span>
+                        </button>
+                    </div>
+                    <p class="hidden-xs">The Gems fight against the Lunarians, beings who attack them and use their
+                        shattered bodies as decorations. Each Gem is assigned a role, and Phos, the youngest, is
+                        assigned to create an encyclopedia of natural history.</p>
+                    <ul class="list-unstyled details" style="font-size:12px;">
+                        <li class="hidden-xs">Original Premiere: 10/6/2017 6:00:00 PM</li>
+                        <li>
+                            Versions: <span class="comma-list">
+                                <span>Broadcast</span>
+                                <span>Home Video</span>
+                            </span>
+                            (TV-14)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="table-cell title-img"
+                style="background-image: url(&quot;https://d10xkldqejj5hr.cloudfront.net/titles/LOL/512x288/LOL_01_001_512x288_00.jpg&quot;);">
+            </div>
+        </div>
+    </div>
+</div> -->
 
 </html>
