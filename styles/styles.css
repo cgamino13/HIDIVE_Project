@@ -9,6 +9,11 @@
 
 .pWindow {
   text-align: left;
+  color: white;
+}
+
+.imageBack {
+  float: right;
 }
 
 a {
